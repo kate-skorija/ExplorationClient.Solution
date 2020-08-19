@@ -13,7 +13,7 @@ namespace ExplorationClient.Models
     public int Rating { get;set; }
     public string Description { get;set; }
     public string Country { get;set; }
-    
+
     public static List<Place> GetPlaces()
     {
       var apiCallTask = ApiHelper.GetAll();
@@ -24,5 +24,18 @@ namespace ExplorationClient.Models
 
       return placeList;
     }
+
+    public static Place GetDetails(int id)
+    {
+      var apiCallTask = ApiHelper.Get(id);
+      var result = apiCallTask.Result;
+
+      JObject jsonResonse = JsonConvert.DeserializeObject<JObject>(result);
+      Place place = JsonConvert.DeserializeObject<Place>(jsonResponse.ToString());
+
+      return place;
+
+    }
+
   }
 }
