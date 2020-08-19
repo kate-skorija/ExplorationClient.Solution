@@ -29,7 +29,7 @@ namespace ExplorationClient.Models
     {
       var apiCallTask = ApiHelper.Get(id);
       var result = apiCallTask.Result;
-      JObject jsonResonse = JsonConvert.DeserializeObject<JObject>(result);
+      JObject jsonResponse = JsonConvert.DeserializeObject<JObject>(result);
       Place place = JsonConvert.DeserializeObject<Place>(jsonResponse.ToString());
       return place;
     }
@@ -45,9 +45,9 @@ namespace ExplorationClient.Models
       string jsonPlace = JsonConvert.SerializeObject(place);
       var apiCallTask = ApiHelper.Put(place.PlaceId, jsonPlace, place.UserName);
     }
-    public static void Delete(int id, Place place)
+    public static void Delete(int id)
     {
-      var apiCallTask = ApiHelper.Delete(id, place.UserName);
+      var apiCallTask = ApiHelper.Delete(id);
     }
   }
 }

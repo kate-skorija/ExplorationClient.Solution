@@ -1,8 +1,8 @@
 @using ExplorationClient.Models;
 
-<h1>New Review</h1>
+<h1>Edit Review:</h1>
 
-<form action="/Places/Details/@(Model.PlaceId)" method="post">
+<form action="/Places/@(Model.PlaceId)" method="post">
   <label for="name">Place Name:</label>
   <input id="name" name="name" type="text" value="@(Model.Name)">
   <label for="country">Country:</label>
@@ -16,16 +16,6 @@
   <button type="submit">Save</button>
 </form>
 
-<h1>All Reviews:</h1>
+<br>
 
-<ol>
-@foreach(Place place in Model)
-{
-  <ul>
-    <li>Country: @place.Country</li>
-    <li>Place Name: @place.Name</li>
-  </ul>
-  <a href="/Places/Details/@(place.PlaceId)"><p>View Details</p></a>
-  <br/>
-}
-</ol>
+<a href="/Places/@(Model.PlaceId)">Return to Details</a>

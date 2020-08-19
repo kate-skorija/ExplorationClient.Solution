@@ -1,14 +1,21 @@
-<h1>Places Details</h1>
+@using ExplorationClient.Models;
+
+<h1>Review Details</h1>
 
 <ol>
   <ul>
-    <li>ID: @place.PlaceId</li>
-    <li>Country: @place.Country</li>
-    <li>Place Name: @place.Name</li>
-    <li>User: @place.UserName</li>
-    <li>Rating: @place.Rating</li>
-    <li>Description: @place.Description</li>
+    <li>ID: @Model.PlaceId</li>
+    <li>Country: @Model.Country</li>
+    <li>Place Name: @Model.Name</li>
+    <li>User: @Model.UserName</li>
+    <li>Rating: @Model.Rating</li>
+    <li>Description: @Model.Description</li>
   </ul>
 </ol>
+
+<br>
+
+<a href="/Places/Edit/@(Model.PlaceId)">Edit</a>
+<a href="/Places/Delete/@(Model.PlaceId)">Delete Review</a>
 
 
