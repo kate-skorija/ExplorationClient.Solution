@@ -30,10 +30,10 @@ namespace ExplorationClient.Models
       var response = await client.ExecuteTaskAsync(request);
     }
 
-    public static async Task Put(int id, string newPlace, string username)
+    public static async Task Put(int id, string newPlace)
     { 
       RestClient client = new RestClient("http://localhost:5000/api");
-      RestRequest request = new RestRequest($"places/{username}/{id}", Method.PUT);
+      RestRequest request = new RestRequest($"places/{id}", Method.PUT);
       request.AddHeader("Content-Type", "application/json");
       request.AddJsonBody(newPlace);
       var response = await client.ExecuteTaskAsync(request);
