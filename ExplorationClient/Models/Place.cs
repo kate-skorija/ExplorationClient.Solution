@@ -43,7 +43,7 @@ namespace ExplorationClient.Models
     public static void Put(Place place)
     {
       string jsonPlace = JsonConvert.SerializeObject(place);
-      var apiCallTask = ApiHelper.Put(place.PlaceId, jsonPlace, place.UserName);
+      var apiCallTask = ApiHelper.Put(place.PlaceId, jsonPlace);
     }
     public static void Delete(int id)
     {
