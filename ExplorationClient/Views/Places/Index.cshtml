@@ -4,12 +4,8 @@
 @foreach(Place place in Model)
 {
   <ul>
-    <li>ID: @place.PlaceId</li>
     <li>Country: @place.Country</li>
-    <li>Name: @place.Name</li>
-    <li>User: @place.UserName</li>
-    <li>Rating: @place.Rating</li>
-    <li>Description: @place.Description</li>
+    <li>Place Name: @place.Name</li>
   </ul>
   <a href="/Places/@(place.PlaceId)"><p>View Details</p></a>
   <br/>

@@ -20,5 +20,31 @@ namespace ExplorationClient.Models
       var response = await client.ExecutetaskAsync(request);
       return response.Content;
     }
+
+    public static async Task Post(string newPlace)
+    {
+      RestClient client = new RestClient("http://localhost:5000/api");
+      RestRequest request = new RestRequest($"places", Method.POST);
+      request.AddHeader("Content-Type", "application/json");
+      request.AddJsonBody(newPlace);
+      var response = await client.ExecuteTaskAsync(request);
+    }
+
+    public static async Task Put(int id, string newPlace, string username)
+    { 
+      RestClient client = new RestClient("http://localhost:5000/api");
+      RestRequest request = new RestRequest($"places/{username}/{id}", Method.PUT);
+      request.AddHeader("Content-Type", "application/json");
+      request.AddJsonBody(newPlace);
+      var response = await client.ExecuteTaskAsync(request);
+    }
+
+    public static async Task Delete(int id, string username)
+    {
+      RestClient client = new RestClient("http://localhost:5000/api");
+      RestRequest request = new RestRequest($"places/{username}/{id}", Method.DELETE);
+      request.AddHeader("Content-Type", "application/json");
+      var response = await client.ExecuteTaskAsync(request);
+    }
   }
 }
