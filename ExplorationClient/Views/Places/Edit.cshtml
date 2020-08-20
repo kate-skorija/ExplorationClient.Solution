@@ -2,7 +2,7 @@
 
 <h1>Edit Review:</h1>
 
-<form action="/Places/@(Model.PlaceId)" method="post">
+<form action="/Places/Details/@(Model.PlaceId)" method="post">
   <label for="name">Place Name:</label>
   <input id="name" name="name" type="text" value="@(Model.Name)">
   <label for="country">Country:</label>
@@ -18,4 +18,4 @@
 
 <br>
 
-<a href="/Places/@(Model.PlaceId)">Return to Details</a>
+<a href="/Places/Details/@(Model.PlaceId)">Return to Details</a>
