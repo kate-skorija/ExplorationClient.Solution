@@ -15,12 +15,19 @@ namespace ExplorationClient.Controllers
       var allPlaces = Place.GetPlaces();
       return View(allPlaces);
     }
+
+    public ActionResult Create()
+    {
+      return View();
+    }
+
     [HttpPost]
-    public IActionResult Index(Place place)
+    public IActionResult Create(Place place)
     {
       Place.Post(place);
-      return RedirectToAction("Index", "Home");
+      return RedirectToAction("Index");
     }
+
     public IActionResult Details(int id)
     {
       var thisPlace = Place.GetDetails(id);
