@@ -31,13 +31,15 @@ namespace ExplorationClient.Controllers
       var place = Place.GetDetails(id);
       return View(place);
     }
+
     [HttpPost]
-    public IActionResult Edit(int id, Place place)
+    public IActionResult Details(int id, Place place)
     {
       place.PlaceId = id;
       Place.Put(place);
       return RedirectToAction("Details", id);
     }
+
     public IActionResult Delete(int id)
     {
       Place.Delete(id);
