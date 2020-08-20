@@ -19,7 +19,7 @@ namespace ExplorationClient.Controllers
     public IActionResult Index(Place place)
     {
       Place.Post(place);
-      return RedirectToAction("Index");
+      return RedirectToAction("Index", "Home");
     }
     public IActionResult Details(int id)
     {
