@@ -31,7 +31,7 @@ namespace ExplorationClient.Models
     }
 
     public static async Task Put(int id, string newPlace)
-    { 
+    {
       RestClient client = new RestClient("http://localhost:5000/api");
       RestRequest request = new RestRequest($"places/{id}", Method.PUT);
       request.AddHeader("Content-Type", "application/json");
